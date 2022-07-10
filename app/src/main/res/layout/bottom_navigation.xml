@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+
+    <variable
+            name="viewModel"
+            type="com.editor.photo.photoeditor.viewModel.StoryViewModel"/>
+</data><FrameLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:padding="8dp">
+
+      <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:src="@drawable/eye_outline"
+              android:layout_gravity="start"
+              android:layout_margin="16dp"/>
+
+       <ImageView
+               android:layout_width="56dp"
+               android:layout_height="56dp"
+               android:src="@drawable/ic_add_circle_black_24dp"
+               android:onClick="@{v -> viewModel.openTemplateListClick()}"
+               android:layout_gravity="center|top"
+               />
+
+       <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/pencil_outline"
+               android:layout_gravity="end"
+               android:onClick="@{v -> viewModel.openEditFragment()}"
+
+               android:layout_margin="16dp"/>
+
+
+</FrameLayout></layout>

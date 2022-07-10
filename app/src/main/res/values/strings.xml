@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Photo Editor</string>
+
+    <string name="new_text">Text Box</string>
+    <string name="sticker">Sticker</string>
+    <string name="background_color">Color</string>
+    <string name="add_edit">Add edit</string>
+    <string name="enter_your_text">Enter your text</string>
+    
+    <!-- choose template tab list titles -->
+    <string name="card1">Card1</string>
+    <string name="card2">Card2</string>
+    <string name="card3">Card3</string>
+    <string name="card4">Card4</string>
+    <string name="card5">Card5</string>
+    <string name="card6">Card6</string>
+    <string name="card7">Card7</string>
+    <string name="card8">Card8</string>
+
+</resources>

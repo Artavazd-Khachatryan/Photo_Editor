@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+
+    <variable
+            name="sticker"
+            type="com.editor.photo.photoeditor.data.models.StickerModel"/>
+
+    <variable
+            name="holder"
+            type="com.editor.photo.photoeditor.view.adapter.StickerListAdapter.StickerItemViewHolder"/>
+
+</data><androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/sticker"
+            android:onClick="@{holder::onClick}"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout></layout>

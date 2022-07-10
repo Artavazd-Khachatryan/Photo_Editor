@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+
+    <variable
+            name="viewModel"
+            type="com.editor.photo.photoeditor.viewModel.StickerPagerViewModel"/>
+
+</data><FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_left"
+            android:layout_margin="8dp"
+            android:layout_gravity="start"
+            android:onClick="@{v -> viewModel.back()}"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stickers"
+            android:textSize="20sp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center|top"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/close"
+            android:layout_margin="8dp"
+            android:layout_gravity="end"
+            android:onClick="@{v -> viewModel.close()}"/>
+</FrameLayout></layout>

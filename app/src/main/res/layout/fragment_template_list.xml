@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+<data>
+
+
+    <variable
+            name="viewModel"
+            type="com.editor.photo.photoeditor.viewModel.TemplateListViewModel" />
+
+
+</data>
+
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/colorGray"
+           android:orientation="vertical">
+
+       <LinearLayout
+               android:id="@+id/llTab"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="5"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                    android:id="@+id/imgSale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="0.45"
+                    android:src="@drawable/ic_sale" />
+
+       <View
+               android:id="@+id/view1"
+               android:layout_width="1dp"
+               android:layout_height="30dp"
+               android:layout_margin="8dp"
+               android:layout_weight="0.01"
+               android:background="@color/colorWhite" />
+
+       <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rvTab"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="8dp"
+               android:layout_marginRight="8dp"
+               android:layout_weight="4.36"
+               android:adapter="@{viewModel.chooseTemplateTabListAdapter}"
+               app:layoutManager="@{viewModel.layoutManager}"/>
+
+        <View
+                android:id="@+id/view2"
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:layout_margin="8dp"
+                android:layout_weight="0.01"
+                android:background="@color/colorWhite" />
+
+       <ImageView
+               android:id="@+id/imgClose"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="8dp"
+               android:layout_weight="0.20"
+               android:src="@drawable/ic_close"
+               android:onClick="@{viewModel.closeTemplateListFragment}"/>
+
+       </LinearLayout>
+
+
+         <androidx.recyclerview.widget.RecyclerView
+                 android:id="@+id/rvTemplateList"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@id/llTab"
+                 android:padding="16dp"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:adapter="@{viewModel.chooseTemplateListAdapter}"
+                 app:layoutManager="@{viewModel.layoutManager1}" >
+ </androidx.recyclerview.widget.RecyclerView>
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

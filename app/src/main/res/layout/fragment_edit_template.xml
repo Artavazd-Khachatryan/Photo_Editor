@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+            name="viewModel"
+            type="com.editor.photo.photoeditor.viewModel.EditTemplateViewModel" />
+</data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGray"
+            android:orientation="vertical"
+            tools:context=".view.fragments.EditTemplateFragment">
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+  <LinearLayout
+          android:id="@+id/linearLayout4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:orientation="horizontal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toStartOf="@+id/view3"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_delete" />
+
+
+    </LinearLayout>
+
+    <View
+            android:id="@+id/view3"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{viewModel::newTextClick}"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintStart_toEndOf="@+id/view3"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_text_box" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/new_text"
+                android:textColor="@color/colorDarkGray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="@{viewModel::openStickerPagerFragment}"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="parent">
+
+         <ImageView
+                 android:layout_width="28dp"
+                 android:layout_height="28dp"
+                 android:src="@drawable/ic_sticker_logo" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/sticker"
+                android:textColor="@color/colorDarkGray" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="@{viewModel::openBackgroundColorList}"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_palette" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/background_color"
+                android:textColor="@color/colorDarkGray" />
+    </LinearLayout>
+
+    <View
+            android:id="@+id/view2"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/close"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="@{viewModel::closeEditTemplateLayout}"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+
+      <ImageView
+              android:layout_width="18dp"
+              android:layout_height="18dp"
+              android:onClick="@{viewModel::closeEditTemplateLayout}"
+              android:src="@drawable/ic_close" />
+
+    </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/ll1"
+                    app:layout_constraintEnd_toEndOf="@id/ll1"
+                    app:layout_constraintStart_toStartOf="@id/ll1"
+                    app:layout_constraintTop_toTopOf="@+id/ll1">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adapter="@{viewModel.backgroundColorListAdapter}"
+                android:background="@color/colorGray"
+                android:padding="12dp"
+                app:layoutManager="@{viewModel.layoutManager}"
+                app:layout_constraintBottom_toTopOf="@+id/fl"
+                app:layout_constraintTop_toTopOf="parent"
+                app:visibility="@{viewModel.backgroundColorListVisibility}"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="8dp">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+        <FrameLayout
+                android:id="@+id/fl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cl"
+                app:layout_constraintStart_toStartOf="@+id/cl"
+                app:layout_constraintTop_toBottomOf="@+id/cl"
+                app:visibility="@{viewModel.backgroundColorListVisibility}">
+
+                   <include
+                           layout="@layout/bottom_background_color_menu"
+                           app:viewModel="@{viewModel}" />
+
+
+        </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
